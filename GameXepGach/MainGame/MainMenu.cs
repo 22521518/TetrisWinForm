@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace MainGame
 {
-    public partial class MainMenu : Form
+    public partial class MainMenu : BasicForm
     {
         public MainMenu()
         {
