@@ -69,6 +69,9 @@
     <EmbeddedResource Include="BasicForm.resx">
       <DependentUpon>BasicForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModesMenu.resx">
       <DependentUpon>ModesMenu.cs</DependentUpon>
     </EmbeddedResource>

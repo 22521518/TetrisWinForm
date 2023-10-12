@@ -9,3 +9,5 @@ D:\CODE\LapTrinhTrucQuan\TetrisWinForm\GameXepGach\MainGame\obj\Debug\MainGame.c
 D:\CODE\LapTrinhTrucQuan\TetrisWinForm\GameXepGach\MainGame\obj\Debug\MainGame.csproj.CoreCompileInputs.cache
 D:\CODE\LapTrinhTrucQuan\TetrisWinForm\GameXepGach\MainGame\obj\Debug\MainGame.exe
 D:\CODE\LapTrinhTrucQuan\TetrisWinForm\GameXepGach\MainGame\obj\Debug\MainGame.pdb
+D:\CODE\LapTrinhTrucQuan\TetrisWinForm\GameXepGach\MainGame\obj\Debug\MainGame.MainMenu.resources
+D:\CODE\LapTrinhTrucQuan\TetrisWinForm\GameXepGach\MainGame\obj\Debug\MainGame.ModesMenu.resources
