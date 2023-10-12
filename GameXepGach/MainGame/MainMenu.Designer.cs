@@ -34,7 +34,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::MainGame.Properties.Resources.postapocalypse2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(942, 493);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "MainMenu";
             this.Text = "MainMenu";
             this.ResumeLayout(false);

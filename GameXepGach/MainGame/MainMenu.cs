@@ -15,6 +15,9 @@ namespace MainGame
         public MainMenu()
         {
             InitializeComponent();
+            this.BackgroundImage = Image.FromFile("./assets/img/background/postapocalypse2.png");
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+            this.DoubleBuffered = true;
         }
     }
 }
