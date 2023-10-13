@@ -87,6 +87,7 @@
             // labelStartingGame
             // 
             this.labelStartingGame.BackColor = System.Drawing.Color.Transparent;
+            this.labelStartingGame.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelStartingGame.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.labelStartingGame.Font = new System.Drawing.Font("Yu Gothic UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelStartingGame.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -106,10 +107,12 @@
             // 
             // HideBackGroundTimer
             // 
+            this.HideBackGroundTimer.Interval = 70;
             this.HideBackGroundTimer.Tick += new System.EventHandler(this.HideBackGroundEvent);
             // 
             // ShowModeTimer
             // 
+            this.ShowModeTimer.Interval = 70;
             this.ShowModeTimer.Tick += new System.EventHandler(this.ShowModeEvent);
             // 
             // labelMode
