@@ -83,6 +83,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -96,6 +97,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\assets\img\background\bird1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\assets\img\background\bird2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\assets\img\background\bird3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\assets\img\background\car_trees_etc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\assets\img\background\fence.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\assets\img\background\houses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\assets\img\background\houses_trees_bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\assets\img\background\postapocalypse2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\assets\img\background\road.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\assets\img\background\sky.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
