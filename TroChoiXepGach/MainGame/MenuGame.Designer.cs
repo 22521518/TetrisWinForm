@@ -95,7 +95,7 @@
             this.labelStartingGame.Name = "labelStartingGame";
             this.labelStartingGame.Size = new System.Drawing.Size(400, 32);
             this.labelStartingGame.TabIndex = 5;
-            this.labelStartingGame.Text = "Press space or click here to play";
+            this.labelStartingGame.Text = "Press any keyboard or click here to play";
             this.labelStartingGame.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.labelStartingGame.Click += new System.EventHandler(this.ClickToPlayEvent);
             // 
