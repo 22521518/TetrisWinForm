@@ -30,21 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             this.Tetris = new System.Windows.Forms.Label();
-            this.Mode1 = new System.Windows.Forms.PictureBox();
-            this.Mode2 = new System.Windows.Forms.PictureBox();
-            this.Mode3 = new System.Windows.Forms.PictureBox();
             this.labelStartingGame = new System.Windows.Forms.Label();
             this.WordEffectTimer = new System.Windows.Forms.Timer(this.components);
             this.HideBackGroundTimer = new System.Windows.Forms.Timer(this.components);
             this.ShowModeTimer = new System.Windows.Forms.Timer(this.components);
             this.labelMode = new System.Windows.Forms.Label();
-            this.Settings = new System.Windows.Forms.PictureBox();
+            this.SettingsIcon = new System.Windows.Forms.PictureBox();
             this.VolumeIcon = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.Mode1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Mode2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Mode3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Settings)).BeginInit();
+            this.Mode3 = new System.Windows.Forms.PictureBox();
+            this.Mode2 = new System.Windows.Forms.PictureBox();
+            this.Mode1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.SettingsIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.VolumeIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mode3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mode2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mode1)).BeginInit();
             this.SuspendLayout();
             // 
             // Tetris
@@ -63,30 +63,6 @@
             this.Tetris.TabIndex = 1;
             this.Tetris.Text = "TETRIS";
             this.Tetris.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // Mode1
-            // 
-            this.Mode1.Location = new System.Drawing.Point(176, -378);
-            this.Mode1.Name = "Mode1";
-            this.Mode1.Size = new System.Drawing.Size(160, 263);
-            this.Mode1.TabIndex = 2;
-            this.Mode1.TabStop = false;
-            // 
-            // Mode2
-            // 
-            this.Mode2.Location = new System.Drawing.Point(396, -378);
-            this.Mode2.Name = "Mode2";
-            this.Mode2.Size = new System.Drawing.Size(160, 263);
-            this.Mode2.TabIndex = 3;
-            this.Mode2.TabStop = false;
-            // 
-            // Mode3
-            // 
-            this.Mode3.Location = new System.Drawing.Point(609, -378);
-            this.Mode3.Name = "Mode3";
-            this.Mode3.Size = new System.Drawing.Size(160, 263);
-            this.Mode3.TabIndex = 4;
-            this.Mode3.TabStop = false;
             // 
             // labelStartingGame
             // 
@@ -132,29 +108,60 @@
             this.labelMode.Text = "MODE";
             this.labelMode.Visible = false;
             // 
-            // Settings
+            // SettingsIcon
             // 
-            this.Settings.Location = new System.Drawing.Point(27, 444);
-            this.Settings.Name = "Settings";
-            this.Settings.Size = new System.Drawing.Size(42, 32);
-            this.Settings.TabIndex = 7;
-            this.Settings.TabStop = false;
+            this.SettingsIcon.BackColor = System.Drawing.Color.Transparent;
+            this.SettingsIcon.Image = global::MainGame.Properties.Resources.icons8_settings_50;
+            this.SettingsIcon.Location = new System.Drawing.Point(778, 28);
+            this.SettingsIcon.Name = "SettingsIcon";
+            this.SettingsIcon.Size = new System.Drawing.Size(32, 32);
+            this.SettingsIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.SettingsIcon.TabIndex = 8;
+            this.SettingsIcon.TabStop = false;
             // 
             // VolumeIcon
             // 
-            this.VolumeIcon.Location = new System.Drawing.Point(89, 444);
+            this.VolumeIcon.BackColor = System.Drawing.Color.Transparent;
+            this.VolumeIcon.Image = global::MainGame.Properties.Resources.icons8_speaker_50;
+            this.VolumeIcon.Location = new System.Drawing.Point(831, 28);
             this.VolumeIcon.Name = "VolumeIcon";
-            this.VolumeIcon.Size = new System.Drawing.Size(42, 32);
-            this.VolumeIcon.TabIndex = 8;
+            this.VolumeIcon.Size = new System.Drawing.Size(32, 32);
+            this.VolumeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.VolumeIcon.TabIndex = 7;
             this.VolumeIcon.TabStop = false;
+            this.VolumeIcon.Click += new System.EventHandler(this.Settings_Click);
+            // 
+            // Mode3
+            // 
+            this.Mode3.Location = new System.Drawing.Point(609, -378);
+            this.Mode3.Name = "Mode3";
+            this.Mode3.Size = new System.Drawing.Size(160, 263);
+            this.Mode3.TabIndex = 4;
+            this.Mode3.TabStop = false;
+            // 
+            // Mode2
+            // 
+            this.Mode2.Location = new System.Drawing.Point(396, -378);
+            this.Mode2.Name = "Mode2";
+            this.Mode2.Size = new System.Drawing.Size(160, 263);
+            this.Mode2.TabIndex = 3;
+            this.Mode2.TabStop = false;
+            // 
+            // Mode1
+            // 
+            this.Mode1.Location = new System.Drawing.Point(176, -378);
+            this.Mode1.Name = "Mode1";
+            this.Mode1.Size = new System.Drawing.Size(160, 263);
+            this.Mode1.TabIndex = 2;
+            this.Mode1.TabStop = false;
             // 
             // MenuGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(957, 498);
+            this.Controls.Add(this.SettingsIcon);
             this.Controls.Add(this.VolumeIcon);
-            this.Controls.Add(this.Settings);
             this.Controls.Add(this.labelMode);
             this.Controls.Add(this.labelStartingGame);
             this.Controls.Add(this.Mode3);
@@ -165,11 +172,11 @@
             this.Text = "MenuGame";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintBackGroundFormEvent);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PressKeyToPlay);
-            ((System.ComponentModel.ISupportInitialize)(this.Mode1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Mode2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Mode3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Settings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SettingsIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.VolumeIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mode3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mode2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Mode1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -186,7 +193,7 @@
         private System.Windows.Forms.Timer HideBackGroundTimer;
         private System.Windows.Forms.Timer ShowModeTimer;
         private System.Windows.Forms.Label labelMode;
-        private System.Windows.Forms.PictureBox Settings;
         private System.Windows.Forms.PictureBox VolumeIcon;
+        private System.Windows.Forms.PictureBox SettingsIcon;
     }
 }

@@ -74,6 +74,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -93,6 +94,18 @@
       <Project>{58d9d345-2769-4774-a7f7-f8d7454341b4}</Project>
       <Name>ComponentsGame</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\assets\img\icon\icons8-speaker-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\assets\img\icon\icons8-no-audio-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\assets\img\icon\icons8-settings-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\assets\img\icon\icons8-settings-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

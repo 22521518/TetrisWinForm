@@ -25,13 +25,14 @@ namespace MainGame
         private float[] stepsBG;
 
         //Sound Effect
-        System.Media.SoundPlayer MenuBGSound = new System.Media.SoundPlayer();
-
+        private List<Image> soundIcon = new List<Image>();
+        private System.Media.SoundPlayer MenuBGSound = new System.Media.SoundPlayer();
+        private int isSound = 1;
 
         public MenuGame()
         {
             InitializeComponent();
-            InitializeBG();
+            InitializeImageFolder();
             this.DoubleBuffered = true;
 
             //TO MAKE BACKGROUND MOVE BASED ON WINDOW
@@ -46,11 +47,14 @@ namespace MainGame
 
 
         }
-        private void InitializeBG()
+        private void InitializeImageFolder()
         {
             bgLayer_dirs = Directory.GetFiles(".\\assets\\img\\background").ToList();
             foreach (string dir in bgLayer_dirs)
                 bgLayers.Add(new ImageDrawer(Image.FromFile(dir), 0, 0));
+
+            soundIcon.Add(Image.FromFile(".\\assets\\img\\icon\\icons8-no-audio-50.png"));
+            soundIcon.Add(Image.FromFile(".\\assets\\img\\icon\\icons8-speaker-50.png"));
         }
 
         private int colorTransitionRate = 17; // ff - cc = 17 ( dai mau tong xam: 00 11 22 33 44 ... ff)
@@ -115,6 +119,17 @@ namespace MainGame
             this.Mode1.Location = new System.Drawing.Point(this.Mode1.Location.X, this.Mode1.Location.Y + 29);
             this.Mode2.Location = new System.Drawing.Point(this.Mode2.Location.X, this.Mode2.Location.Y + 29);
             this.Mode3.Location = new System.Drawing.Point(this.Mode3.Location.X, this.Mode3.Location.Y + 29);
+        }
+
+        private void Settings_Click(object sender, EventArgs e)
+        {
+            if (isSound == 1)
+                MenuBGSound.Stop();
+            else
+                MenuBGSound.PlayLooping();
+
+            isSound = 1 - isSound;
+            this.VolumeIcon.Image = soundIcon[isSound];
         }
 
         private void PaintBackGroundFormEvent(object sender, PaintEventArgs e)
