@@ -111,17 +111,20 @@
             // SettingsIcon
             // 
             this.SettingsIcon.BackColor = System.Drawing.Color.Transparent;
-            this.SettingsIcon.Image = global::MainGame.Properties.Resources.icons8_settings_50;
-            this.SettingsIcon.Location = new System.Drawing.Point(778, 28);
+            this.SettingsIcon.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SettingsIcon.Image = global::MainGame.Properties.Resources.icons8_scoreboard_64;
+            this.SettingsIcon.Location = new System.Drawing.Point(97, 28);
             this.SettingsIcon.Name = "SettingsIcon";
-            this.SettingsIcon.Size = new System.Drawing.Size(32, 32);
+            this.SettingsIcon.Size = new System.Drawing.Size(54, 52);
             this.SettingsIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SettingsIcon.TabIndex = 8;
             this.SettingsIcon.TabStop = false;
+            this.SettingsIcon.Click += new System.EventHandler(this.SettingsIcon_Click);
             // 
             // VolumeIcon
             // 
             this.VolumeIcon.BackColor = System.Drawing.Color.Transparent;
+            this.VolumeIcon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.VolumeIcon.Image = global::MainGame.Properties.Resources.icons8_speaker_50;
             this.VolumeIcon.Location = new System.Drawing.Point(831, 28);
             this.VolumeIcon.Name = "VolumeIcon";
@@ -169,7 +172,8 @@
             this.Controls.Add(this.Mode1);
             this.Controls.Add(this.Tetris);
             this.Name = "MenuGame";
-            this.Text = "MenuGame";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "TETRIS";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.PaintBackGroundFormEvent);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PressKeyToPlay);
             ((System.ComponentModel.ISupportInitialize)(this.SettingsIcon)).EndInit();

@@ -10,51 +10,55 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media;
 using ComponentsGame.ImageDrawer;
+using MainGame.DialogForm;
 
 namespace MainGame
 {
     public partial class MenuGame : BasicForm
     {
         //Background
-        List<string> bgLayer_dirs = new List<string>();
-        List<ImageDrawer> bgLayers = new List<ImageDrawer>();
-        private float sizeBG_Height = 405f,
-                      sizeBG_Width = 720f;
-        private int index_layer = 8;
-        private float[] stepsBG;
+        List<string> BGDirectory = new List<string>();
+        List<ImageDrawer> BGLayers = new List<ImageDrawer>();
+        private float SizeBG_Height = 405f,
+                      SizeBG_Width = 720f;
+        private int IndexLayer = 8;
+        private float[] BGSteps;
 
         //Sound Effect
-        private List<Image> soundIcon = new List<Image>();
-        private System.Media.SoundPlayer MenuBGSound = new System.Media.SoundPlayer();
-        private int isSound = 1;
+        private List<Image> SoundIcon = new List<Image>();
+        public System.Media.SoundPlayer MenuBGSound = new System.Media.SoundPlayer();
+        private int IsSound = 1;
 
         public MenuGame()
         {
             InitializeComponent();
             InitializeImageFolder();
+            InitializSound();
             this.DoubleBuffered = true;
+
+            //MAKE SOUND FOR BACKGROUND
+            MenuBGSound.PlayLooping();
+        }
+        private void InitializeImageFolder()
+        {
+            BGDirectory = Directory.GetFiles(".\\assets\\img\\background").ToList();
+            foreach (string dir in BGDirectory)
+                BGLayers.Add(new ImageDrawer(Image.FromFile(dir), 0, 0));
 
             //TO MAKE BACKGROUND MOVE BASED ON WINDOW
             float h1 = ClientSize.Height; //WHOLE SCREEN
             float h2 = ClientSize.Height * 2 / 3; // MEDIUM
             float h3 = ClientSize.Height / 3; // LOW
-            stepsBG = new float[9] { h1, h1, h1, h2, h3, 3, h2, h2, h2};
-
-            //MAKE SOUND FOR BACKGROUND
-            MenuBGSound.SoundLocation = "./assets/sound/comic5.wav";
-            MenuBGSound.PlayLooping();
-
-
+            BGSteps = new float[9] { h1, h1, h1, h2, h3, 3, h2, h2, h2 };
         }
-        private void InitializeImageFolder()
-        {
-            bgLayer_dirs = Directory.GetFiles(".\\assets\\img\\background").ToList();
-            foreach (string dir in bgLayer_dirs)
-                bgLayers.Add(new ImageDrawer(Image.FromFile(dir), 0, 0));
 
-            soundIcon.Add(Image.FromFile(".\\assets\\img\\icon\\icons8-no-audio-50.png"));
-            soundIcon.Add(Image.FromFile(".\\assets\\img\\icon\\icons8-speaker-50.png"));
+        private void InitializSound()
+        {
+            SoundIcon.Add(Image.FromFile(".\\assets\\img\\icon\\icons8-no-audio-50.png"));
+            SoundIcon.Add(Image.FromFile(".\\assets\\img\\icon\\icons8-speaker-50.png"));
+            MenuBGSound.SoundLocation = "./assets/sound/comic5.wav";
         }
 
         private int colorTransitionRate = 17; // ff - cc = 17 ( dai mau tong xam: 00 11 22 33 44 ... ff)
@@ -67,7 +71,7 @@ namespace MainGame
             if (curentColor == 255)
                 colorTransitionRate = -17;
             curentColor += colorTransitionRate;
-            labelStartingGame.ForeColor = Color.FromArgb(curentColor, curentColor, curentColor);
+            labelStartingGame.ForeColor = System.Drawing.Color.FromArgb(curentColor, curentColor, curentColor);
         }
         bool ModeIsOpen = false;
         private void ClickToPlayEvent(object sender, EventArgs e)
@@ -92,18 +96,18 @@ namespace MainGame
 
         private void HideBackGroundEvent(object sender, EventArgs e)
         {
-            if (bgLayers[index_layer].PosY > stepsBG[index_layer])
+            if (BGLayers[IndexLayer].PosY > BGSteps[IndexLayer])
             {
-                index_layer--;
+                IndexLayer--;
             }
-            if (index_layer < 2)
+            if (IndexLayer < 2)
             {
-                index_layer = 8;
+                IndexLayer = 8;
                 this.HideBackGroundTimer.Enabled = false;
                 this.ShowModeTimer.Enabled = true;
                 return;
             }
-            bgLayers[index_layer].PosY += stepsBG[index_layer] / 3;
+            BGLayers[IndexLayer].PosY += BGSteps[IndexLayer] / 3;
             this.Invalidate();
         }
 
@@ -123,22 +127,26 @@ namespace MainGame
 
         private void Settings_Click(object sender, EventArgs e)
         {
-            if (isSound == 1)
+            if (IsSound == 1)
                 MenuBGSound.Stop();
             else
                 MenuBGSound.PlayLooping();
 
-            isSound = 1 - isSound;
-            this.VolumeIcon.Image = soundIcon[isSound];
+            IsSound = 1 - IsSound;
+            this.VolumeIcon.Image = SoundIcon[IsSound];
         }
+        private void SettingsIcon_Click(object sender, EventArgs e)
+        {
+            ScoreDialog Setting = new ScoreDialog(this);
+            Setting.StartPosition = FormStartPosition.CenterScreen;
+            Setting.Show();
 
+        }
         private void PaintBackGroundFormEvent(object sender, PaintEventArgs e)
         {
             Graphics canvas = e.Graphics;
-            for (int i = 0; i <= index_layer; i++)
-                canvas.DrawImage(bgLayers[i].Img, bgLayers[i].PosX, bgLayers[i].PosY, sizeBG_Width, sizeBG_Height);
-
-            
+            for (int i = 0; i <= IndexLayer; i++)
+                canvas.DrawImage(BGLayers[i].Img, BGLayers[i].PosX, BGLayers[i].PosY, SizeBG_Width, SizeBG_Height);
         }
     }
 }

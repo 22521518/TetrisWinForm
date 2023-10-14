@@ -73,9 +73,9 @@ namespace MainGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_settings_50 {
+        internal static System.Drawing.Bitmap icons8_scoreboard_64 {
             get {
-                object obj = ResourceManager.GetObject("icons8-settings-50", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8-scoreboard-64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace MainGame.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_settings_64 {
+        internal static System.Drawing.Bitmap icons8_settings_50 {
             get {
-                object obj = ResourceManager.GetObject("icons8-settings-64", resourceCulture);
+                object obj = ResourceManager.GetObject("icons8-settings-50", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

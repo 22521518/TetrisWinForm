@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -44,6 +45,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BasicForm.cs">
@@ -51,6 +53,12 @@
     </Compile>
     <Compile Include="BasicForm.Designer.cs">
       <DependentUpon>BasicForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForm\ScoreDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForm\ScoreDialog.Designer.cs">
+      <DependentUpon>ScoreDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuGame.cs">
       <SubType>Form</SubType>
@@ -62,6 +70,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BasicForm.resx">
       <DependentUpon>BasicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForm\ScoreDialog.resx">
+      <DependentUpon>ScoreDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuGame.resx">
       <DependentUpon>MenuGame.cs</DependentUpon>
@@ -106,6 +117,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\assets\img\icon\icons8-settings-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\assets\img\icon\icons8-scoreboard-64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
