@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,13 +16,18 @@ namespace MainGame
 {
     public partial class MenuGame : BasicForm
     {
-
+        //Background
         List<string> bgLayer_dirs = new List<string>();
         List<ImageDrawer> bgLayers = new List<ImageDrawer>();
         private float sizeBG_Height = 405f,
                       sizeBG_Width = 720f;
         private int index_layer = 8;
         private float[] stepsBG;
+
+        //Sound Effect
+        System.Media.SoundPlayer MenuBGSound = new System.Media.SoundPlayer();
+
+
         public MenuGame()
         {
             InitializeComponent();
@@ -33,6 +39,12 @@ namespace MainGame
             float h2 = ClientSize.Height * 2 / 3; // MEDIUM
             float h3 = ClientSize.Height / 3; // LOW
             stepsBG = new float[9] { h1, h1, h1, h2, h3, 3, h2, h2, h2};
+
+            //MAKE SOUND FOR BACKGROUND
+            MenuBGSound.SoundLocation = "./assets/sound/comic5.wav";
+            MenuBGSound.PlayLooping();
+
+
         }
         private void InitializeBG()
         {
@@ -110,6 +122,8 @@ namespace MainGame
             Graphics canvas = e.Graphics;
             for (int i = 0; i <= index_layer; i++)
                 canvas.DrawImage(bgLayers[i].Img, bgLayers[i].PosX, bgLayers[i].PosY, sizeBG_Width, sizeBG_Height);
+
+            
         }
     }
 }
