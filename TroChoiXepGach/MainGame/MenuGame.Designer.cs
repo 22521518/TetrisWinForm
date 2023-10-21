@@ -1,4 +1,6 @@
-﻿namespace MainGame
+﻿using System.Drawing;
+
+namespace MainGame
 {
     partial class MenuGame
     {
@@ -112,10 +114,10 @@
             // 
             this.SettingsIcon.BackColor = System.Drawing.Color.Transparent;
             this.SettingsIcon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SettingsIcon.Image = global::MainGame.Properties.Resources.icons8_scoreboard_64;
             this.SettingsIcon.Location = new System.Drawing.Point(97, 28);
             this.SettingsIcon.Name = "SettingsIcon";
             this.SettingsIcon.Size = new System.Drawing.Size(54, 52);
+            this.SettingsIcon.Image = Image.FromFile("./assets/img/icon/icons8-speaker-50.png");
             this.SettingsIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.SettingsIcon.TabIndex = 8;
             this.SettingsIcon.TabStop = false;
@@ -125,10 +127,10 @@
             // 
             this.VolumeIcon.BackColor = System.Drawing.Color.Transparent;
             this.VolumeIcon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.VolumeIcon.Image = global::MainGame.Properties.Resources.icons8_speaker_50;
             this.VolumeIcon.Location = new System.Drawing.Point(831, 28);
             this.VolumeIcon.Name = "VolumeIcon";
             this.VolumeIcon.Size = new System.Drawing.Size(32, 32);
+            this.VolumeIcon.Image = Image.FromFile("./assets/img/icon/icons8-speaker-50.png");
             this.VolumeIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.VolumeIcon.TabIndex = 7;
             this.VolumeIcon.TabStop = false;

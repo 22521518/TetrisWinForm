@@ -20,8 +20,8 @@ namespace MainGame
     {
         //Background
         List<string> BGDirectory = new List<string>();
-        List<ImageDrawer> BGLayers = new List<ImageDrawer>();
-        private float SizeBG_Height = 405f,
+        readonly List<ImageDrawer> BGLayers = new List<ImageDrawer>();
+        readonly private float SizeBG_Height = 405f,
                       SizeBG_Width = 720f;
         private int IndexLayer = 8;
         private float[] BGSteps;
