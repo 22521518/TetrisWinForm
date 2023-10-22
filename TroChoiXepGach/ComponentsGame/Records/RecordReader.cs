@@ -8,11 +8,11 @@ using System.Drawing.Printing;
 
 namespace ComponentsGame.Records
 {
-    public class RecordManager
+    public class RecordReader
     {
         private readonly string filePath = "./database/scores.txt";
         List<Record> listOfRecords = new List<Record>();
-        public RecordManager() {
+        public RecordReader() {
             UpdateRecord();
         }
 
