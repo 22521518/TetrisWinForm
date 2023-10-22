@@ -18,6 +18,7 @@ namespace ComponentsGame.Records
 
         public void UpdateRecord(bool sorted = true)
         {
+            listOfRecords.Clear();
             listOfRecords = ReadFile(sorted);
         }
 
@@ -44,7 +45,11 @@ namespace ComponentsGame.Records
                 Console.WriteLine($"ReadFile() gets bugs with {filePath}");
                 Console.WriteLine(e.Message);
             }
-            return sorted ? tmp.OrderByDescending(row => row.Score).ToList() : tmp;
+            return sorted ? tmp.OrderByDescending(row => row.Score).ToList() : tmp.OrderByDescending( row =>
+                                                                                { if (DateTime.TryParse(row.Date, out DateTime parsedDate))
+                                                                                        return parsedDate;
+                                                                                    return DateTime.MinValue;
+                                                                                }).ToList();
         }
         private Record SplitData(string line)
         {
@@ -52,8 +57,8 @@ namespace ComponentsGame.Records
 
             string name = data[0];
             long score = long.TryParse(data[1], out var t_score) ? t_score : 0; 
-            //string date = data[2];
-            return new Record(name, score);
+            string date = data[2];
+            return new Record(name, score, date);
         }
     }
 }

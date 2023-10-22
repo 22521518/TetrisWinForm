@@ -15,9 +15,9 @@ namespace ComponentsGame
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-
+                RecordReader recordReader = new RecordReader();
+            recordReader.UpdateRecord(false);
+            recordReader.print();
         }
     }
 }
