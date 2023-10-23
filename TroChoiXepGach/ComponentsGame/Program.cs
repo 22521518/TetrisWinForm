@@ -15,9 +15,7 @@ namespace ComponentsGame
         [STAThread]
         static void Main()
         {
-                RecordReader recordReader = new RecordReader();
-            recordReader.UpdateRecord(false);
-            recordReader.print();
+            Console.WriteLine(new Exception("Invalid Value").ToString());
         }
     }
 }

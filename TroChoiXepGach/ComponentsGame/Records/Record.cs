@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ComponentsGame.Records
 {
-    internal class Record
+    public class Record
     {
         public string Name { set; get; } 
         public long Score { set; get; }
