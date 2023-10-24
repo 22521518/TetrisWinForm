@@ -60,7 +60,7 @@ namespace ComponentsGame.Records
             }
             catch (Exception e)
             {
-                throw new Exception("Mode isnt exist" + '\n' + e.ToString());
+                throw new Exception("Mode isnt exist" + '\n' + e.Message);
             }
         }
     }
