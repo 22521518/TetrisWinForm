@@ -2,8 +2,16 @@ D:\CODE\LapTrinhTrucQuan\TetrisWinForm\TroChoiXepGach\MainGame\bin\Debug\MainGam
 D:\CODE\LapTrinhTrucQuan\TetrisWinForm\TroChoiXepGach\MainGame\bin\Debug\MainGame.exe
 D:\CODE\LapTrinhTrucQuan\TetrisWinForm\TroChoiXepGach\MainGame\bin\Debug\MainGame.pdb
 D:\CODE\LapTrinhTrucQuan\TetrisWinForm\TroChoiXepGach\MainGame\bin\Debug\ComponentsGame.exe
+D:\CODE\LapTrinhTrucQuan\TetrisWinForm\TroChoiXepGach\MainGame\bin\Debug\EntityFramework.dll
+D:\CODE\LapTrinhTrucQuan\TetrisWinForm\TroChoiXepGach\MainGame\bin\Debug\EntityFramework.SqlServer.dll
+D:\CODE\LapTrinhTrucQuan\TetrisWinForm\TroChoiXepGach\MainGame\bin\Debug\System.Data.SQLite.dll
+D:\CODE\LapTrinhTrucQuan\TetrisWinForm\TroChoiXepGach\MainGame\bin\Debug\System.Data.SQLite.EF6.dll
+D:\CODE\LapTrinhTrucQuan\TetrisWinForm\TroChoiXepGach\MainGame\bin\Debug\System.Data.SQLite.Linq.dll
 D:\CODE\LapTrinhTrucQuan\TetrisWinForm\TroChoiXepGach\MainGame\bin\Debug\ComponentsGame.pdb
 D:\CODE\LapTrinhTrucQuan\TetrisWinForm\TroChoiXepGach\MainGame\bin\Debug\ComponentsGame.exe.config
+D:\CODE\LapTrinhTrucQuan\TetrisWinForm\TroChoiXepGach\MainGame\bin\Debug\EntityFramework.xml
+D:\CODE\LapTrinhTrucQuan\TetrisWinForm\TroChoiXepGach\MainGame\bin\Debug\EntityFramework.SqlServer.xml
+D:\CODE\LapTrinhTrucQuan\TetrisWinForm\TroChoiXepGach\MainGame\bin\Debug\System.Data.SQLite.xml
 D:\CODE\LapTrinhTrucQuan\TetrisWinForm\TroChoiXepGach\MainGame\obj\Debug\MainGame.csproj.AssemblyReference.cache
 D:\CODE\LapTrinhTrucQuan\TetrisWinForm\TroChoiXepGach\MainGame\obj\Debug\MainGame.csproj.SuggestedBindingRedirects.cache
 D:\CODE\LapTrinhTrucQuan\TetrisWinForm\TroChoiXepGach\MainGame\obj\Debug\Interop.WMPLib.dll
