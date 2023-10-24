@@ -6,77 +6,62 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Drawing.Printing;
 using System.Data.SQLite;
+using System.Data;
+using System.Windows.Forms;
 
 namespace ComponentsGame.Records
 {
     public class RecordReader
     {
-        private readonly string filePath = "./database/scores.txt";
-        List<Record> listOfRecords = new List<Record>();
+        private readonly string datapath = "Database.db";
+        private DataSet data = new DataSet();
+        public DataSet Data { get => data; }
         public RecordReader() {
-            UpdateRecord();
-            //if (!File.Exists(filePath))
-            //{
-            //    SQLiteConnection.CreateFile(filePath);
-            //    using (SQLiteConnection connect = new SQLiteConnection(filePath))
-            //    {
-            //        connect.Open();
-            //        using (SQLiteCommand command = new SQLiteCommand(connect)) 
-            //        {
-            //            command.CommandText = "CREATE TABLE IF NOT EXISTS PLAYER (ID TINYINT PRIMARYKEY, NAME VARCHAR(16));";
-            //            command.ExecuteNonQuery();
-            //            command.CommandText = "CREATE TABLE IF NOT EXISTS MODE (ID TINYINT PRIMARYKEY, NAME VARCHAR(10));";
-            //            command.ExecuteNonQuery();
-            //            command.CommandText = "CREATE TABLE IF NOT EXISTS SCOREBOARD " +
-            //                                "(PLAYERID TINYINT, SCORE MEDIUMINT, MODEID TINYINT, " +
-            //                                "FOREIGN KEY (PLAYERID) REFERENCES PLAYER(ID), " +
-            //                                "FOREIGN KEY (MODEID) REFERENCES MODE(ID), " +
-            //                                "PRIMARY KEY (PLAYERID, SCORE, MODE));";
-            //            command.ExecuteNonQuery();
-            //        }
-            //    }
-            //}    
+            string query = "SELECT PLAYER.NAME AS NAME, SCOREBOARD.SCORE, SCOREBOARD.MODEID " +
+                "FROM PLAYER INNER JOIN SCOREBOARD ON PLAYER.ID = SCOREBOARD.PLAYERID" +
+                " WHERE MODEID = 1;";
+            //string query = $"SELECT ID, NAME AS 'STT', 'TEN' FROM PLAYER";
+            data = GetRecord(query);
         }
 
-        public void UpdateRecord(bool sorted = true)
+        DataSet GetRecord(string query)
         {
-            listOfRecords.Clear();
-            listOfRecords = ReadFile(sorted);
+            string connectionString = $"Data Source={datapath};Version=3;";
+
+            SQLiteConnection connection = new SQLiteConnection(connectionString);
+            connection.Open();
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, connection);
+
+            DataSet dataSet = new DataSet();
+            adapter.Fill(dataSet, "Data");
+            connection.Close();
+            data = dataSet;
+            return dataSet;
+        }
+        public DataSet GetRecordAll()
+        {
+            string query = "SELECT PLAYER.NAME AS NAME, SCOREBOARD.SCORE, MODE.NAME AS MODE" +
+                " FROM PLAYER INNER JOIN SCOREBOARD ON PLAYER.ID = SCOREBOARD.PLAYERID" +
+                " INNER JOIN MODE ON MODE.ID = SCOREBOARD.MODEID" ;
+            return GetRecord(query);
+        }
+        public DataSet GetRecordPlayer()
+        {
+            string query = "SELECT * FROM PLAYER;";
+            return GetRecord(query);
         }
 
-        public void print()
+        public DataSet GetRecordMode(int numb)
         {
-            foreach (var record in listOfRecords)
-                Console.WriteLine(record.ToString());
-        }
-
-        private List<Record> ReadFile(bool sorted = false)
-        {
-            var tmp = new List<Record>();
             try
             {
-                var lineFromFile = File.ReadLines(filePath);
-                foreach (string line in lineFromFile)
-                {
-                    Record data = SplitData(line);
-                    tmp.Add(data);
-                }
+                string query = $"SELECT PLAYER.NAME AS NAME, SCOREBOARD.SCORE FROM PLAYER INNER JOIN SCOREBOARD ON PLAYER.ID = SCOREBOARD.PLAYERID WHERE MODEID = {numb};";
+                return GetRecord(query);
             }
             catch (Exception e)
             {
-                Console.WriteLine($"ReadFile() gets bugs with {filePath}");
-                Console.WriteLine(e.Message);
+                throw new Exception("Mode isnt exist" + '\n' + e.ToString());
             }
-            return sorted ? tmp.OrderByDescending(row => row.Score).ToList() : tmp;
-        }
-        private Record SplitData(string line)
-        {
-            List<string> data = line.Trim().Split(':').ToList();
-
-            string name = data[0];
-            long score = long.TryParse(data[1], out var t_score) ? t_score : 0; 
-            int id = int.TryParse(data[2], out var t_id) ? t_id : 0;
-            return new Record(name, score, id);
         }
     }
 }
