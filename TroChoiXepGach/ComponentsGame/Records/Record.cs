@@ -11,18 +11,19 @@ namespace ComponentsGame.Records
     {
         public string Name { set; get; } 
         public long Score { set; get; }
-        public string Date { set; get; }
+        public int ID { set; get; }
+        public int ID_MODE { set; get; }
 
-        public Record(string n = "anonymous", long s = 0, string d = "null")
+        public Record(string n = "anonymous", long s = 0, int d = 0)
         {
             Score = s;
             Name = n;
-            Date = d;
+            ID = d;
         }
 
         public override string ToString()
         {
-            return $"{Name.PadRight(15)} : {Score.ToString().PadRight(5)} : {Date}";
+            return $"{Name.PadRight(15)} : {Score.ToString().PadRight(5)} : {ID}";
         }
     }
 }
