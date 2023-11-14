@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.Common;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -83,6 +84,15 @@ namespace GameBase
             Draw(GameState);
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            PrivateFontCollection pfc = new PrivateFontCollection();
+            pfc.AddFontFile(".\\Assets\\font.ttf");
+            foreach (Control c in this.Controls)
+            {
+                c.Font = new Font(pfc.Families[0], 15, FontStyle.Regular);
+            }
+        }
 
         void SetUpCanvas(int Row, int Column) //GameGrid grid
         {
@@ -147,6 +157,7 @@ namespace GameBase
             DrawBlock(gamestate.CurrentBlock);
             DrawNextBlock(gamestate.queue);
             label1.Text = gamestate.Score.ToString();
+            label1.TextAlign = ContentAlignment.MiddleRight;
 
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)

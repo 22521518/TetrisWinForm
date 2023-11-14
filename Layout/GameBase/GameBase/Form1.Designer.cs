@@ -1,4 +1,6 @@
-﻿namespace GameBase
+﻿using System.Drawing;
+
+namespace GameBase
 {
     partial class Form1
     {
@@ -63,12 +65,15 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(336, 503);
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(211)))), ((int)(((byte)(156)))));
+            this.label1.Font = new System.Drawing.Font("Early GameBoy", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(63)))));
+            this.label1.Location = new System.Drawing.Point(328, 276);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 63);
+            this.label1.Size = new System.Drawing.Size(139, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "Score";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // timer3
             // 
@@ -143,7 +148,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(26F, 63F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 573);
+            this.ClientSize = new System.Drawing.Size(491, 499);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox1);
@@ -151,7 +157,6 @@
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI Emoji", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
