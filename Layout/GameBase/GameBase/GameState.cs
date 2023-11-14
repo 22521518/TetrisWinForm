@@ -27,7 +27,7 @@ namespace GameBase
         public bool GameOver { get; private set; }
         public GameState()
         {
-            gameGrid = new GameGrid(22, 12);
+            gameGrid = new GameGrid(22, 10);
             queue = new QueueBlock();
             currentBlock = queue.GetBlock();
             GameOver = false;

@@ -92,7 +92,7 @@ namespace GameBase
                 for (int j = 0; j < Column; j++)
                 {
                     canvas[i, j] = new System.Windows.Forms.PictureBox();
-                    canvas[i, j].Location = new System.Drawing.Point(cellSize * j, cellSize * (i - 2));
+                    canvas[i, j].Location = new System.Drawing.Point(25 + cellSize * j, cellSize * (i - 2));
                     canvas[i, j].Size = new System.Drawing.Size(cellSize, cellSize);
                     canvas[i, j].BackColor = Color.Transparent;
                     canvas[i, j].SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -119,27 +119,6 @@ namespace GameBase
                     catch { MessageBox.Show(grid[i, j].ToString()); }
 
                 }
-            for (int i = 0; i < grid.Row; i++)
-            { 
-                try
-                {
-                    int id = grid[i, 11];
-                    canvas[i, 11].Image = TileImage[8];
-                }
-                catch { MessageBox.Show(grid[i, 11].ToString()); }
-
-            }
-            for (int i = 0; i < grid.Row; i++)
-            {
-                try
-                {
-                    int id = grid[i, 0];
-                    canvas[i, 0].Image = TileImage[8];
-                }
-                catch { MessageBox.Show(grid[i, 0].ToString()); }
-
-            }
-
         }
         void DrawBlock(Block.Block block)
         {

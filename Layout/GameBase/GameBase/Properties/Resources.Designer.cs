@@ -73,6 +73,16 @@ namespace GameBase.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap emptytile {
+            get {
+                object obj = ResourceManager.GetObject("emptytile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap score_board {
             get {
                 object obj = ResourceManager.GetObject("score_board", resourceCulture);
@@ -96,6 +106,16 @@ namespace GameBase.Properties {
         internal static System.Drawing.Bitmap start_hover {
             get {
                 object obj = ResourceManager.GetObject("start_hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wall {
+            get {
+                object obj = ResourceManager.GetObject("wall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -131,5 +131,11 @@
   <ItemGroup>
     <None Include="bin\Debug\Assets\score_board.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Assets\wall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Assets\emptytile.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
