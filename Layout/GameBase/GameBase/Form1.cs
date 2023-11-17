@@ -116,7 +116,7 @@ namespace GameBase
    
 
         }
-        void DrawGrid(GameGrid grid)
+        void DrawGrid(GameGrid grid, bool blink = false)
         {
             for (int i = 0; i < grid.Row; i++)
                 for (int j = 0; j < grid.Column; j++)
@@ -124,7 +124,12 @@ namespace GameBase
                     try
                     {
                         int id = grid[i, j];
-                        canvas[i, j].Image = TileImage[id];
+                        if (id > 0)
+                           canvas[i, j].Image = TileImage[id];
+                        else if (!blink && id == 0)
+                           canvas[i, j].Image = TileImage[id];
+                        else
+                            canvas[i, j].Image = TileImageBlur[-id];
                     }
                     catch { MessageBox.Show(grid[i, j].ToString()); }
 
@@ -135,8 +140,10 @@ namespace GameBase
             foreach (Position p in block.PositionInTiles())
                 canvas[p.Row, p.Column].Image = TileImage[block.Id];
         }
-        void DrawGhostBlock(Block.Block block)
+        void DrawGhostBlock(Block.Block block, bool status = true)
         {
+            if (!status)
+                return;
             int drop = GameState.BlockDropDistance();
             foreach (Position p in block.PositionInTiles())
             {
@@ -150,10 +157,11 @@ namespace GameBase
             Block.Block next = queue.nextBlock;
             this.pictureBox1.Image = FullBlock[next.Id];
         }
-        void Draw(GameState gamestate)
+        bool ghost = false;
+        void Draw(GameState gamestate, bool block = false)
         {
-            DrawGrid(gamestate.gameGrid);
-            DrawGhostBlock(gamestate.CurrentBlock);
+            DrawGrid(gamestate.gameGrid, block);
+            DrawGhostBlock(gamestate.CurrentBlock, ghost);
             DrawBlock(gamestate.CurrentBlock);
             DrawNextBlock(gamestate.queue);
             label1.Text = gamestate.Score.ToString();
@@ -171,19 +179,19 @@ namespace GameBase
             }
             else
             {
-                if (this.timer1.Enabled)
+                if (this.DelayKey.Enabled)
                     return;
                 switch (e.KeyCode)
                 {
                     case Keys.Left:
                     case Keys.A:
                         if (GameState.MoveLeft())
-                            this.timer3.Enabled = false;
+                            this.PlaceBlock.Enabled = false;
                         break;
                     case Keys.Right:
                     case Keys.D:
                         if (GameState.MoveRight())
-                            this.timer3.Enabled = false;
+                            this.PlaceBlock.Enabled = false;
                         break;
                     case Keys.Down:
                     case Keys.S:
@@ -192,16 +200,21 @@ namespace GameBase
                     case Keys.Up:
                     case Keys.W:
                         if (GameState.BlockRotate90())
-                            this.timer3.Enabled = false;
+                            this.PlaceBlock.Enabled = false;
                         break;
                     case Keys.Space:
-                        GameState.Drop();
-                        this.timer3.Enabled = false;
+                        int row = GameState.Drop();
+                        if (row >= 1)
+                        {
+                            blink = row >= 4 ? true : false;
+                            this.DownBlock.Enabled = false;
+                            this.Clear.Enabled = true;
+                        }    
                         break;
                     default:
                         return;
                 }
-                this.timer1.Enabled = true;
+                this.DelayKey.Enabled = true;
             }
 
             Draw(GameState);
@@ -210,8 +223,8 @@ namespace GameBase
         int i = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            timer1.Enabled = ++i > 1 ? false : true;
-            i = timer1.Enabled ? i : 0;
+            DelayKey.Enabled = ++i > 1 ? false : true;
+            i = DelayKey.Enabled ? i : 0;
         }
         private void DownBlock_Tick(object sender, EventArgs e)
         {
@@ -224,19 +237,47 @@ namespace GameBase
             }
             else
                 if (!GameState.MoveDown())
-                timer3.Enabled = true;
+                PlaceBlock.Enabled = true;
 
             Draw(GameState);
             this.Invalidate();
-
         }
 
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            GameState.PlaceBlock();
-            timer3.Enabled = false;
+            int row = GameState.PlaceBlock();
+            if (row > 0)
+            {
+                DownBlock.Enabled = false;
+                Clear.Enabled = true;
+                blink = row >= 4 ? true : false;
+            }    
+            PlaceBlock.Enabled = false;
         }
 
+        int tick = 0;
+        bool blink;
+        bool blinkblink;
+        private void Clear_Tick(object sender, EventArgs e)
+        {
+            if (tick >= 5)
+            {
+                tick = 0;
+                GameState.ClearRow();
+                Clear.Enabled = false;
+                DownBlock.Enabled = true;
+                blinkblink = false;
+            }
+            else
+            {
+                if (blink)
+                    blinkblink = !blinkblink;
+                GameState.gameGrid.MarkedFullRow();
+                tick++;
+            }
+            Draw(GameState, blinkblink);
+            this.Invalidate();
+        }
     }
 }

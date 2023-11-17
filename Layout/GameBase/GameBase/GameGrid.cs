@@ -44,10 +44,10 @@ namespace GameBase
             return true;
         }
 
-        public void ClearRow (int r)
+        public void ClearRow (int r, int x = 0)
         {
             for (int c = 0; c < Column; c++)
-               grid[r, c] = 0;
+               grid[r, c] *= x;
         }
 
         private void MoveRow(int r, int numberOfClearedRow)
@@ -59,7 +59,21 @@ namespace GameBase
                 grid[r, c] = 0;
             }    
         }
+        public int MarkedFullRow()
+        {
+            int cleared = 0;
+            for (int r = Row - 1; r >= 0; r--)
+            {
+                //counting number of row which is full first
+                if (IsRowFull(r))
+                {
+                    cleared++;
+                    ClearRow(r, -1);
+                }
+            }
 
+            return cleared; // for calculating points 
+        }
         public int ClearFullRow()
         {
             int cleared= 0;

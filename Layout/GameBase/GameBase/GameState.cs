@@ -86,16 +86,21 @@ namespace GameBase
             return !(gameGrid.IsRowEmpty(0) && gameGrid.IsRowEmpty(1));
         }
     
-        public void PlaceBlock()
+        public int PlaceBlock()
         {
             foreach (Position p in currentBlock.PositionInTiles())
                 gameGrid[p.Row, p.Column] = CurrentBlock.Id;
-            Score += gameGrid.ClearFullRow();
             
             if (IsGameOver())
                 GameOver = IsGameOver();
             else
                 currentBlock = queue.GetBlock();
+
+            return gameGrid.MarkedFullRow();
+        }
+        public void ClearRow()
+        {
+            Score += gameGrid.ClearFullRow();
         }
         public bool MoveDown()
         {
@@ -124,10 +129,10 @@ namespace GameBase
             return drop;
         }
 
-        public void Drop()
+        public int Drop()
         {
             CurrentBlock.Move(BlockDropDistance(), 0);
-            PlaceBlock();
+            return PlaceBlock();
         }
     }
 }

@@ -17,10 +17,10 @@ namespace GameBase
         public Menu()
         {
             InitializeComponent();
-            player.URL = (".\\Assets\\Sounds\\theme.mp3");
-            player.settings.autoStart = true;
-            player.settings.setMode("loop", true);
-            player.controls.play();
+            //player.URL = (".\\Assets\\Sounds\\theme.mp3");
+            //player.settings.autoStart = true;
+            //player.settings.setMode("loop", true);
+            //player.controls.play();
         }
 
         private void start_button_MouseHover(object sender, EventArgs e)

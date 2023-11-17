@@ -31,10 +31,10 @@ namespace GameBase
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.DelayKey = new System.Windows.Forms.Timer(this.components);
             this.DownBlock = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.PlaceBlock = new System.Windows.Forms.Timer(this.components);
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -42,6 +42,7 @@ namespace GameBase
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.Clear = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -51,10 +52,10 @@ namespace GameBase
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // timer1
+            // DelayKey
             // 
-            this.timer1.Interval = 1;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.DelayKey.Interval = 1;
+            this.DelayKey.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // DownBlock
             // 
@@ -66,19 +67,19 @@ namespace GameBase
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(196)))), ((int)(((byte)(211)))), ((int)(((byte)(156)))));
-            this.label1.Font = new System.Drawing.Font("Early GameBoy", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(63)))));
             this.label1.Location = new System.Drawing.Point(328, 276);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 32);
+            this.label1.Size = new System.Drawing.Size(79, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Score";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // timer3
+            // PlaceBlock
             // 
-            this.timer3.Interval = 150;
-            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            this.PlaceBlock.Interval = 150;
+            this.PlaceBlock.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // pictureBox7
             // 
@@ -144,6 +145,10 @@ namespace GameBase
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
+            // Clear
+            // 
+            this.Clear.Tick += new System.EventHandler(this.Clear_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(26F, 63F);
@@ -181,17 +186,18 @@ namespace GameBase
 
         #endregion
 
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer DelayKey;
         private System.Windows.Forms.Timer DownBlock;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Timer PlaceBlock;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.Timer Clear;
     }
 }
 
