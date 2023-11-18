@@ -58,3 +58,109 @@ D:\CODE\LapTrinhTrucQuan\TetrisWinForm\Layout\GameBase\GameBase\obj\Debug\GameBa
 D:\CODE\LapTrinhTrucQuan\TetrisWinForm\Layout\GameBase\GameBase\obj\Debug\GameBase.csproj.CoreCompileInputs.cache
 D:\CODE\LapTrinhTrucQuan\TetrisWinForm\Layout\GameBase\GameBase\obj\Debug\GameBase.exe
 D:\CODE\LapTrinhTrucQuan\TetrisWinForm\Layout\GameBase\GameBase\obj\Debug\GameBase.pdb
+C:\Users\ASUS\TetrisWinForm\Layout\GameBase\GameBase\bin\Debug\GameBase.exe.config
+C:\Users\ASUS\TetrisWinForm\Layout\GameBase\GameBase\bin\Debug\GameBase.exe
+C:\Users\ASUS\TetrisWinForm\Layout\GameBase\GameBase\bin\Debug\GameBase.pdb
+C:\Users\ASUS\TetrisWinForm\Layout\GameBase\GameBase\bin\Debug\Interop.WMPLib.dll
+C:\Users\ASUS\TetrisWinForm\Layout\GameBase\GameBase\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\ASUS\TetrisWinForm\Layout\GameBase\GameBase\obj\Debug\GameBase.csproj.AssemblyReference.cache
+C:\Users\ASUS\TetrisWinForm\Layout\GameBase\GameBase\obj\Debug\Interop.WMPLib.dll
+C:\Users\ASUS\TetrisWinForm\Layout\GameBase\GameBase\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\ASUS\TetrisWinForm\Layout\GameBase\GameBase\obj\Debug\GameBase.csproj.ResolveComReference.cache
+C:\Users\ASUS\TetrisWinForm\Layout\GameBase\GameBase\obj\Debug\GameBase.Form1.resources
+C:\Users\ASUS\TetrisWinForm\Layout\GameBase\GameBase\obj\Debug\GameBase.Menu.resources
+C:\Users\ASUS\TetrisWinForm\Layout\GameBase\GameBase\obj\Debug\GameBase.Properties.Resources.resources
+C:\Users\ASUS\TetrisWinForm\Layout\GameBase\GameBase\obj\Debug\GameBase.csproj.GenerateResource.cache
+C:\Users\ASUS\TetrisWinForm\Layout\GameBase\GameBase\obj\Debug\GameBase.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\TetrisWinForm\Layout\GameBase\GameBase\obj\Debug\GameBase.exe
+C:\Users\ASUS\TetrisWinForm\Layout\GameBase\GameBase\obj\Debug\GameBase.pdb
+D:\LayoutChanged\GameBase\GameBase\bin\Debug\GameBase.exe.config
+D:\LayoutChanged\GameBase\GameBase\bin\Debug\GameBase.exe
+D:\LayoutChanged\GameBase\GameBase\bin\Debug\GameBase.pdb
+D:\LayoutChanged\GameBase\GameBase\bin\Debug\Interop.WMPLib.dll
+D:\LayoutChanged\GameBase\GameBase\bin\Debug\AxInterop.WMPLib.dll
+D:\LayoutChanged\GameBase\GameBase\obj\Debug\GameBase.csproj.AssemblyReference.cache
+D:\LayoutChanged\GameBase\GameBase\obj\Debug\Interop.WMPLib.dll
+D:\LayoutChanged\GameBase\GameBase\obj\Debug\AxInterop.WMPLib.dll
+D:\LayoutChanged\GameBase\GameBase\obj\Debug\GameBase.csproj.ResolveComReference.cache
+D:\LayoutChanged\GameBase\GameBase\obj\Debug\GameBase.Form1.resources
+D:\LayoutChanged\GameBase\GameBase\obj\Debug\GameBase.Properties.Resources.resources
+D:\LayoutChanged\GameBase\GameBase\obj\Debug\GameBase.csproj.GenerateResource.cache
+D:\LayoutChanged\GameBase\GameBase\obj\Debug\GameBase.csproj.CoreCompileInputs.cache
+D:\LayoutChanged\GameBase\GameBase\obj\Debug\GameBase.exe
+D:\LayoutChanged\GameBase\GameBase\obj\Debug\GameBase.pdb
+D:\LayoutChanged - Copy\GameBase\GameBase\bin\Debug\GameBase.exe.config
+D:\LayoutChanged - Copy\GameBase\GameBase\bin\Debug\GameBase.exe
+D:\LayoutChanged - Copy\GameBase\GameBase\bin\Debug\GameBase.pdb
+D:\LayoutChanged - Copy\GameBase\GameBase\bin\Debug\Interop.WMPLib.dll
+D:\LayoutChanged - Copy\GameBase\GameBase\bin\Debug\AxInterop.WMPLib.dll
+D:\LayoutChanged - Copy\GameBase\GameBase\obj\Debug\GameBase.csproj.AssemblyReference.cache
+D:\LayoutChanged - Copy\GameBase\GameBase\obj\Debug\Interop.WMPLib.dll
+D:\LayoutChanged - Copy\GameBase\GameBase\obj\Debug\AxInterop.WMPLib.dll
+D:\LayoutChanged - Copy\GameBase\GameBase\obj\Debug\GameBase.csproj.ResolveComReference.cache
+D:\LayoutChanged - Copy\GameBase\GameBase\obj\Debug\GameBase.Form1.resources
+D:\LayoutChanged - Copy\GameBase\GameBase\obj\Debug\GameBase.Properties.Resources.resources
+D:\LayoutChanged - Copy\GameBase\GameBase\obj\Debug\GameBase.csproj.GenerateResource.cache
+D:\LayoutChanged - Copy\GameBase\GameBase\obj\Debug\GameBase.csproj.CoreCompileInputs.cache
+D:\LayoutChanged - Copy\GameBase\GameBase\obj\Debug\GameBase.exe
+D:\LayoutChanged - Copy\GameBase\GameBase\obj\Debug\GameBase.pdb
+D:\LayoutTemp\GameBase\GameBase\bin\Debug\GameBase.exe.config
+D:\LayoutTemp\GameBase\GameBase\bin\Debug\GameBase.exe
+D:\LayoutTemp\GameBase\GameBase\bin\Debug\GameBase.pdb
+D:\LayoutTemp\GameBase\GameBase\bin\Debug\Interop.WMPLib.dll
+D:\LayoutTemp\GameBase\GameBase\bin\Debug\AxInterop.WMPLib.dll
+D:\LayoutTemp\GameBase\GameBase\obj\Debug\GameBase.csproj.AssemblyReference.cache
+D:\LayoutTemp\GameBase\GameBase\obj\Debug\Interop.WMPLib.dll
+D:\LayoutTemp\GameBase\GameBase\obj\Debug\AxInterop.WMPLib.dll
+D:\LayoutTemp\GameBase\GameBase\obj\Debug\GameBase.csproj.ResolveComReference.cache
+D:\LayoutTemp\GameBase\GameBase\obj\Debug\GameBase.Form1.resources
+D:\LayoutTemp\GameBase\GameBase\obj\Debug\GameBase.Properties.Resources.resources
+D:\LayoutTemp\GameBase\GameBase\obj\Debug\GameBase.csproj.GenerateResource.cache
+D:\LayoutTemp\GameBase\GameBase\obj\Debug\GameBase.csproj.CoreCompileInputs.cache
+D:\LayoutTemp\GameBase\GameBase\obj\Debug\GameBase.exe
+D:\LayoutTemp\GameBase\GameBase\obj\Debug\GameBase.pdb
+D:\LayoutTemp - Copy\GameBase\GameBase\bin\Debug\GameBase.exe.config
+D:\LayoutTemp - Copy\GameBase\GameBase\bin\Debug\GameBase.exe
+D:\LayoutTemp - Copy\GameBase\GameBase\bin\Debug\GameBase.pdb
+D:\LayoutTemp - Copy\GameBase\GameBase\bin\Debug\Interop.WMPLib.dll
+D:\LayoutTemp - Copy\GameBase\GameBase\bin\Debug\AxInterop.WMPLib.dll
+D:\LayoutTemp - Copy\GameBase\GameBase\obj\Debug\GameBase.csproj.AssemblyReference.cache
+D:\LayoutTemp - Copy\GameBase\GameBase\obj\Debug\Interop.WMPLib.dll
+D:\LayoutTemp - Copy\GameBase\GameBase\obj\Debug\AxInterop.WMPLib.dll
+D:\LayoutTemp - Copy\GameBase\GameBase\obj\Debug\GameBase.csproj.ResolveComReference.cache
+D:\LayoutTemp - Copy\GameBase\GameBase\obj\Debug\GameBase.Form1.resources
+D:\LayoutTemp - Copy\GameBase\GameBase\obj\Debug\GameBase.Properties.Resources.resources
+D:\LayoutTemp - Copy\GameBase\GameBase\obj\Debug\GameBase.csproj.GenerateResource.cache
+D:\LayoutTemp - Copy\GameBase\GameBase\obj\Debug\GameBase.csproj.CoreCompileInputs.cache
+D:\LayoutTemp - Copy\GameBase\GameBase\obj\Debug\GameBase.exe
+D:\LayoutTemp - Copy\GameBase\GameBase\obj\Debug\GameBase.pdb
+D:\LayoutTemp2 - Copy\GameBase\GameBase\bin\Debug\GameBase.exe.config
+D:\LayoutTemp2 - Copy\GameBase\GameBase\bin\Debug\GameBase.exe
+D:\LayoutTemp2 - Copy\GameBase\GameBase\bin\Debug\GameBase.pdb
+D:\LayoutTemp2 - Copy\GameBase\GameBase\bin\Debug\Interop.WMPLib.dll
+D:\LayoutTemp2 - Copy\GameBase\GameBase\bin\Debug\AxInterop.WMPLib.dll
+D:\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\GameBase.csproj.AssemblyReference.cache
+D:\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\Interop.WMPLib.dll
+D:\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\AxInterop.WMPLib.dll
+D:\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\GameBase.csproj.ResolveComReference.cache
+D:\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\GameBase.Form1.resources
+D:\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\GameBase.Properties.Resources.resources
+D:\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\GameBase.csproj.GenerateResource.cache
+D:\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\GameBase.csproj.CoreCompileInputs.cache
+D:\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\GameBase.exe
+D:\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\GameBase.pdb
+D:\Downloads\LayoutTemp2 - Copy\GameBase\GameBase\bin\Debug\GameBase.exe.config
+D:\Downloads\LayoutTemp2 - Copy\GameBase\GameBase\bin\Debug\GameBase.exe
+D:\Downloads\LayoutTemp2 - Copy\GameBase\GameBase\bin\Debug\GameBase.pdb
+D:\Downloads\LayoutTemp2 - Copy\GameBase\GameBase\bin\Debug\Interop.WMPLib.dll
+D:\Downloads\LayoutTemp2 - Copy\GameBase\GameBase\bin\Debug\AxInterop.WMPLib.dll
+D:\Downloads\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\GameBase.csproj.AssemblyReference.cache
+D:\Downloads\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\Interop.WMPLib.dll
+D:\Downloads\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\AxInterop.WMPLib.dll
+D:\Downloads\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\GameBase.csproj.ResolveComReference.cache
+D:\Downloads\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\GameBase.Form1.resources
+D:\Downloads\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\GameBase.Properties.Resources.resources
+D:\Downloads\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\GameBase.csproj.GenerateResource.cache
+D:\Downloads\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\GameBase.csproj.CoreCompileInputs.cache
+D:\Downloads\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\GameBase.exe
+D:\Downloads\LayoutTemp2 - Copy\GameBase\GameBase\obj\Debug\GameBase.pdb

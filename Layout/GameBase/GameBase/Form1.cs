@@ -23,41 +23,40 @@ namespace GameBase
         //O GACH
         Image[] TileImage = new Image[]
         {
-            Image.FromFile(".\\Assets\\emptytile.png"),
-            Image.FromFile(".\\Assets\\i.png"),
-            Image.FromFile(".\\Assets\\j.png"),
-            Image.FromFile(".\\Assets\\l.png"),
-            Image.FromFile(".\\Assets\\o.png"),
-            Image.FromFile(".\\Assets\\s.png"),
-            Image.FromFile(".\\Assets\\t.png"),
-            Image.FromFile(".\\Assets\\z.png"),
-            Image.FromFile(".\\Assets\\wall.png"),
+            Image.FromFile(".\\Assets\\theme1\\emptytile.png"),
+            Image.FromFile(".\\Assets\\theme1\\i.png"),
+            Image.FromFile(".\\Assets\\theme1\\j.png"),
+            Image.FromFile(".\\Assets\\theme1\\l.png"),
+            Image.FromFile(".\\Assets\\theme1\\o.png"),
+            Image.FromFile(".\\Assets\\theme1\\s.png"),
+            Image.FromFile(".\\Assets\\theme1\\t.png"),
+            Image.FromFile(".\\Assets\\theme1\\z.png"),
         };
 
         //Gach duoi day
         Bitmap[] TileImageBlur = new Bitmap[]
         {
-            new Bitmap(".\\Assets\\emptytile.png"),
-            new Bitmap(".\\Assets\\i.png"),
-            new Bitmap(".\\Assets\\j.png"),
-            new Bitmap(".\\Assets\\l.png"),
-            new Bitmap(".\\Assets\\o.png"),
-            new Bitmap(".\\Assets\\s.png"),
-            new Bitmap(".\\Assets\\t.png"),
-            new Bitmap(".\\Assets\\z.png"),
+            new Bitmap(".\\Assets\\theme1\\emptytile.png"),
+            new Bitmap(".\\Assets\\theme1\\i.png"),
+            new Bitmap(".\\Assets\\theme1\\j.png"),
+            new Bitmap(".\\Assets\\theme1\\l.png"),
+            new Bitmap(".\\Assets\\theme1\\o.png"),
+            new Bitmap(".\\Assets\\theme1\\s.png"),
+            new Bitmap(".\\Assets\\theme1\\t.png"),
+            new Bitmap(".\\Assets\\theme1\\z.png"),
 
         };
 
         Image[] FullBlock = new Image[]
         {
-            Image.FromFile(".\\Assets\\blockempty.png"),
-            Image.FromFile(".\\Assets\\iblock.png"),
-            Image.FromFile(".\\Assets\\jblock.png"),
-            Image.FromFile(".\\Assets\\lblock.png"),
-            Image.FromFile(".\\Assets\\oblock.png"),
-            Image.FromFile(".\\Assets\\sblock.png"),
-            Image.FromFile(".\\Assets\\tblock.png"),
-            Image.FromFile(".\\Assets\\zblock.png"),
+            Image.FromFile(".\\Assets\\theme1\\blockempty.png"),
+            Image.FromFile(".\\Assets\\theme1\\iblock.png"),
+            Image.FromFile(".\\Assets\\theme1\\jblock.png"),
+            Image.FromFile(".\\Assets\\theme1\\lblock.png"),
+            Image.FromFile(".\\Assets\\theme1\\oblock.png"),
+            Image.FromFile(".\\Assets\\theme1\\sblock.png"),
+            Image.FromFile(".\\Assets\\theme1\\tblock.png"),
+            Image.FromFile(".\\Assets\\theme1\\zblock.png"),
         };
         void MakeBlur()
         {
@@ -73,7 +72,7 @@ namespace GameBase
             }
         }
         System.Windows.Forms.PictureBox[,] canvas;
-        int cellSize = 25;
+        int cellSize = 32;
         GameState GameState;
         public Form1()
         {
@@ -84,16 +83,6 @@ namespace GameBase
             Draw(GameState);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            PrivateFontCollection pfc = new PrivateFontCollection();
-            pfc.AddFontFile(".\\Assets\\font.ttf");
-            foreach (Control c in this.Controls)
-            {
-                c.Font = new Font(pfc.Families[0], 15, FontStyle.Regular);
-            }
-        }
-
         void SetUpCanvas(int Row, int Column) //GameGrid grid
         {
             canvas = new System.Windows.Forms.PictureBox[Row, Column];
@@ -102,7 +91,7 @@ namespace GameBase
                 for (int j = 0; j < Column; j++)
                 {
                     canvas[i, j] = new System.Windows.Forms.PictureBox();
-                    canvas[i, j].Location = new System.Drawing.Point(25 + cellSize * j, cellSize * (i - 2));
+                    canvas[i, j].Location = new System.Drawing.Point(32 + cellSize * j, cellSize * (i - 2));
                     canvas[i, j].Size = new System.Drawing.Size(cellSize, cellSize);
                     canvas[i, j].BackColor = Color.Transparent;
                     canvas[i, j].SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -157,7 +146,7 @@ namespace GameBase
             Block.Block next = queue.nextBlock;
             this.pictureBox1.Image = FullBlock[next.Id];
         }
-        bool ghost = false;
+        bool ghost = true;
         void Draw(GameState gamestate, bool block = false)
         {
             DrawGrid(gamestate.gameGrid, block);
@@ -166,7 +155,12 @@ namespace GameBase
             DrawNextBlock(gamestate.queue);
             label1.Text = gamestate.Score.ToString();
             label1.TextAlign = ContentAlignment.MiddleRight;
-
+            PrivateFontCollection pfc = new PrivateFontCollection();
+            pfc.AddFontFile(".\\Assets\\theme1\\font.ttf");
+            foreach (Control c in this.Controls)
+            {
+                c.Font = new Font(pfc.Families[0], 17, FontStyle.Regular);
+            }
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
