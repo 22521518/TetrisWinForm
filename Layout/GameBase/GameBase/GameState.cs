@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GameBase.Block;
+using WMPLib;
 
 namespace GameBase
 {
@@ -51,6 +53,9 @@ namespace GameBase
                 currentBlock.Rotate270();
                 return false;
             }
+            WindowsMediaPlayer soundplayer = new WindowsMediaPlayer();
+            soundplayer.URL = (".\\Assets\\Sounds\\rotate.wav");
+            soundplayer.settings.volume = 80;
             return true;
         }
         public void BlockRotate270()
@@ -58,6 +63,9 @@ namespace GameBase
             currentBlock.Rotate270();
             if (!isBlockLegit())
                 currentBlock.Rotate90();
+            WindowsMediaPlayer soundplayer = new WindowsMediaPlayer();
+            soundplayer.URL = (".\\Assets\\Sounds\\rotate.wav");
+            soundplayer.settings.volume = 80;
         }
 
         public bool MoveLeft()
@@ -68,6 +76,9 @@ namespace GameBase
                 currentBlock.Move(0, 1);
                 return false;
             }
+            WindowsMediaPlayer soundplayer = new WindowsMediaPlayer();
+            soundplayer.URL = (".\\Assets\\Sounds\\move.wav");
+            soundplayer.settings.volume = 80;
             return true;
         }
         public bool MoveRight()
@@ -78,6 +89,9 @@ namespace GameBase
                 currentBlock.Move(0, -1);
                 return false;
             }
+            WindowsMediaPlayer soundplayer = new WindowsMediaPlayer();
+            soundplayer.URL = (".\\Assets\\Sounds\\move.wav");
+            soundplayer.settings.volume = 80;
             return true;
         }
 
@@ -90,11 +104,16 @@ namespace GameBase
         {
             foreach (Position p in currentBlock.PositionInTiles())
                 gameGrid[p.Row, p.Column] = CurrentBlock.Id;
-            
+
             if (IsGameOver())
                 GameOver = IsGameOver();
             else
+            { 
                 currentBlock = queue.GetBlock();
+                WindowsMediaPlayer soundplayer = new WindowsMediaPlayer();
+                soundplayer.URL = (".\\Assets\\Sounds\\land.wav");
+                soundplayer.settings.volume = 80;
+            }
 
             return gameGrid.MarkedFullRow();
         }
