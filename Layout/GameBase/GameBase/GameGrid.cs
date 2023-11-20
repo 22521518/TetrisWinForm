@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WMPLib;
 
 namespace GameBase
 {
@@ -57,7 +58,10 @@ namespace GameBase
             {
                 grid[r + numberOfClearedRow, c] = grid[r, c];
                 grid[r, c] = 0;
-            }    
+            }
+            WindowsMediaPlayer soundplayer = new WindowsMediaPlayer();
+            soundplayer.URL = (".\\Assets\\Sounds\\fall.wav");
+            soundplayer.settings.volume = 80;
         }
         public int MarkedFullRow()
         {
@@ -90,6 +94,9 @@ namespace GameBase
                 else if (cleared > 0)
                 {
                     MoveRow(r, cleared);
+                    WindowsMediaPlayer soundplayer = new WindowsMediaPlayer();
+                    soundplayer.URL = (".\\Assets\\Sounds\\clear.wav");
+                    soundplayer.settings.volume = 80;
                 }
             }
 
