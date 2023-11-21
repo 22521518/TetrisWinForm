@@ -141,7 +141,7 @@ namespace BaseGame2v2
                 MoveTimer.Start();
                 return;
             }
-            if (tick <= 1)
+            if (tickDelay % 2 == 0)
             {
                 if (BlockLeft)
                     if (GameState.MoveBlockLeft())
@@ -149,10 +149,10 @@ namespace BaseGame2v2
                 if (BlockRight)
                     if (GameState.MoveBlockRight())
                         DelayPlaceBlock.Enabled = false;
-                if (tick % 5 == 0)
-                    if (!GameState.MoveDown())
-                        DelayPlaceBlock.Enabled = true;
             }
+            if (tick % 12 == 0)
+                if (!GameState.MoveDown())
+                    DelayPlaceBlock.Enabled = true;
             if (MoveLeft)
                 GameState.MoveLeft();
             if (MoveRight)
@@ -173,8 +173,9 @@ namespace BaseGame2v2
                 GameState.Fall(1);
             }
             Draw(GameState);
-            this.Invalidate();
-            tick = (tick + 1) % 7;
+            Invalidate();
+            tick = (tick + 1) % 13;
+            tickDelay = (tickDelay + 1) % 4;
         }
         private void DelayPlaceBlock_Tick(object sender, EventArgs e)
         {
@@ -184,6 +185,7 @@ namespace BaseGame2v2
             MoveTimer.Start();
         }
         int tick;
+        int tickDelay;
         int Jump;
         int CellSize = 32;
         bool MoveLeft, MoveRight;
