@@ -174,8 +174,8 @@ namespace BaseGame2v2
             }
             Draw(GameState);
             Invalidate();
-            tick = (tick + 1) % 13;
-            tickDelay = (tickDelay + 1) % 6;
+            tick = (tick + 1) % 12;
+            tickDelay = (tickDelay + 1) % 3;
         }
         private void DelayPlaceBlock_Tick(object sender, EventArgs e)
         {
