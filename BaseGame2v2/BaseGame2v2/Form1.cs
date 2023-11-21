@@ -141,7 +141,7 @@ namespace BaseGame2v2
                 MoveTimer.Start();
                 return;
             }
-            if (tickDelay % 2 == 0)
+            if (tickDelay % 3 == 0)
             {
                 if (BlockLeft)
                     if (GameState.MoveBlockLeft())
@@ -175,7 +175,7 @@ namespace BaseGame2v2
             Draw(GameState);
             Invalidate();
             tick = (tick + 1) % 13;
-            tickDelay = (tickDelay + 1) % 4;
+            tickDelay = (tickDelay + 1) % 6;
         }
         private void DelayPlaceBlock_Tick(object sender, EventArgs e)
         {
