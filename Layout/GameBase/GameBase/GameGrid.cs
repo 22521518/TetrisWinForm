@@ -9,98 +9,115 @@ namespace GameBase
 {
     public class GameGrid
     {
-        public readonly int Column;
-        public readonly int Row;
-        private readonly int[,] grid;
+        public int Column { get; }
+        public int Row { get; }
+        private int[,] grid;
         public int this[int r, int c]
         {
-            set => grid[r, c] = value;
             get => grid[r, c];
+            set => grid[r, c] = value;
         }
 
-        public GameGrid(int row, int col)
+        public GameGrid(int row = 22, int col = 10)
         {
-            this.Column = col;
-            this.Row = row;
+            Column = col;
+            Row = row;
             grid = new int[row, col];
         }
-        public bool IsInside(int row, int col) => (col >= 0 && col < Column && row >= 0 && row < Row);
-
-        public bool IsEmpty(int r, int c)
+        public bool IsInside(int row, int col)
         {
-            return IsInside(r, c) && grid[r, c] == 0;
+            return row >= 0 && col >= 0 && row < Row && col < Column;
         }
-        public bool IsRowEmpty(int r)
+
+        public bool IsEmpty(int row, int col)
+        {
+            return IsInside(row, col) && grid[row, col] == 0;
+        }
+        public bool IsRowEmpty(int row)
         {
             for (int col = 0; col < Column; col++)
-                if (grid[r,col] != 0)
+            {
+                if (grid[row, col] != 0)
+                    return false;
+            }
+            return true;
+        }
+        public bool IsRowFull(int row)
+        {
+            for (int col = 0; col < Column; col++)
+                if (grid[row, col] == 0)
                     return false;
             return true;
         }
-        public bool IsRowFull(int r)
+
+        public void ClearRow (int row, int x = 0)
         {
             for (int col = 0; col < Column; col++)
-                if (grid[r, col] == 0)
-                    return false;
-            return true;
+               grid[row, col] *= x;
         }
 
-        public void ClearRow (int r, int x = 0)
-        {
-            for (int c = 0; c < Column; c++)
-               grid[r, c] *= x;
-        }
-
-        private void MoveRow(int r, int numberOfClearedRow)
+        private void MoveRow(int row, int numberOfClearedRow)
         {
             //this one for clearing from the top to bottom which is empty
-            for (int c = 0; c < Column; c++)
+            for (int col = 0; col < Column; col++)
             {
-                grid[r + numberOfClearedRow, c] = grid[r, c];
-                grid[r, c] = 0;
+                try
+                {
+                    grid[row + numberOfClearedRow, col] = grid[row, col];
+                    grid[row, col] = 0;
+                }
+                catch 
+                {
+                    Console.WriteLine($"?????{row}, {col}\n\n");
+                    Console.WriteLine(this.ToString());
+                }
             }
-            WindowsMediaPlayer soundplayer = new WindowsMediaPlayer();
-            soundplayer.URL = (".\\Assets\\Sounds\\fall.wav");
-            soundplayer.settings.volume = 80;
         }
         public int MarkedFullRow()
         {
             int cleared = 0;
-            for (int r = Row - 1; r >= 0; r--)
+            for (int row = Row - 1; row >= 0; row--)
             {
                 //counting number of row which is full first
-                if (IsRowFull(r))
+                if (IsRowFull(row))
                 {
                     cleared++;
-                    ClearRow(r, -1);
+                    ClearRow(row, -1);
                 }
             }
-
             return cleared; // for calculating points 
         }
         public int ClearFullRow()
         {
             int cleared= 0;
-            for(int r = Row - 1; r >= 0; r--)
+            for(int row= Row - 1; row >= 0; row--)
             {
                 //counting number of row which is full first
-                if (IsRowFull(r))
+                if (IsRowFull(row))
                 {
                     cleared++;
-                    ClearRow(r);
+                    ClearRow(row);
 
                 }
                 //then clearing from the top -> down 
                 else if (cleared > 0)
                 {
-                    MoveRow(r, cleared);
-                    WindowsMediaPlayer soundplayer = new WindowsMediaPlayer();
-                    soundplayer.URL = (".\\Assets\\Sounds\\clear.wav");
-                    soundplayer.settings.volume = 80;
+                    MoveRow(row, cleared);
                 }
             }
 
             return cleared; // for calculating points 
+        }
+        public override string ToString()
+        {
+            string str = "";
+            for (int r = 0; r < Row; r++)
+            {
+                for (int c = 0; c < Column; c++)
+                    str += grid[r, c].ToString() + ' ';
+                str += "\n";
+            }
+            return str;
         }
     }
 }

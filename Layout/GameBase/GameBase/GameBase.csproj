@@ -46,14 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Block\Block.cs" />
-    <Compile Include="Block\IBlock.cs" />
-    <Compile Include="Block\JBlock.cs" />
-    <Compile Include="Block\LBlock.cs" />
-    <Compile Include="Block\OBlock.cs" />
-    <Compile Include="Block\SBlock.cs" />
-    <Compile Include="Block\TBlock.cs" />
-    <Compile Include="Block\ZBlock.cs" />
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Object\Block.cs" />
+    <Compile Include="Object\Character.cs" />
+    <Compile Include="Object\IBlock.cs" />
+    <Compile Include="Object\JBlock.cs" />
+    <Compile Include="Object\LBlock.cs" />
+    <Compile Include="Object\OBlock.cs" />
+    <Compile Include="Object\Position.cs" />
+    <Compile Include="Object\SBlock.cs" />
+    <Compile Include="Object\TBlock.cs" />
+    <Compile Include="Object\ZBlock.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +81,9 @@
     <Compile Include="QueueBlock.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

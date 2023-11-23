@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using GameBase.Block;
+using GameBase.Object;
 using System.Threading;
 using System.Reflection.Emit;
 using WMPLib;
@@ -124,12 +124,12 @@ namespace GameBase
 
                 }
         }
-        void DrawBlock(Block.Block block)
+        void DrawBlock(Object.Block block)
         {
             foreach (Position p in block.PositionInTiles())
                 canvas[p.Row, p.Column].Image = TileImage[block.Id];
         }
-        void DrawGhostBlock(Block.Block block, bool status = true)
+        void DrawGhostBlock(Object.Block block, bool status = true)
         {
             if (!status)
                 return;
@@ -143,7 +143,7 @@ namespace GameBase
         }
         private void DrawNextBlock(QueueBlock queue)
         {
-            Block.Block next = queue.nextBlock;
+            Object.Block next = queue.nextBlock;
             this.pictureBox1.Image = FullBlock[next.Id];
         }
         bool ghost = true;

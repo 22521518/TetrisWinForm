@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using GameBase.Block;
+using GameBase.Object;
 
 namespace GameBase
 {
     public class QueueBlock
     {
-        private readonly Block.Block[] queue = new Block.Block[]
+        private readonly Object.Block[] queue = new Object.Block[]
         {
             new IBlock(),
             new JBlock(),
@@ -20,18 +20,18 @@ namespace GameBase
             new ZBlock()
         };
         readonly Random random = new Random();
-        public Block.Block nextBlock { get; private set; }
+        public Object.Block nextBlock { get; private set; }
         public QueueBlock()
         {
             nextBlock = RandomBlock();
         }
-        Block.Block RandomBlock()
+        Object.Block RandomBlock()
         {
             return queue[random.Next() % queue.Length];
         }
-        public Block.Block GetBlock()   
+        public Object.Block GetBlock()   
         {
-            Block.Block temp = nextBlock;
+            Object.Block temp = nextBlock;
             do
             {
                 nextBlock = RandomBlock();

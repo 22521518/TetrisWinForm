@@ -4,19 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameBase.Block
+namespace GameBase.Object
 {
-    public class Position
-    {
-        public int Column { get; set; }
-        public int Row { get; set; }
-        public Position (int row, int column)
-        {
-            this.Column = column;
-            this.Row = row;
-        }
-    }
-
     public abstract class Block
     {
         protected abstract Position[][] Tiles { get; } // like a box containing each block (4 x 4)
@@ -66,7 +55,5 @@ namespace GameBase.Block
             offset.Row = startOffSet.Row;
             offset.Column = startOffSet.Column; 
         }
-
-
     }
 }
